@@ -15,7 +15,7 @@ Once the server is running, open your browser and navigate to `http://localhost:
 Or just run:
 
 ```bash
-ng serve
+ng serve --open
 ```
 
 To open the page directly on the browser

@@ -16,7 +16,7 @@ export class Impact {
     { value: 5000, suffix: '+', label: 'Lives Impacted', icon: 'bi-people-fill' },
     { value: 25, suffix: '', label: 'Communities Reached', icon: 'bi-geo-alt-fill' },
     { value: 120, suffix: '+', label: 'Volunteers', icon: 'bi-person-hearts' },
-    { value: 10, suffix: '', label: 'Years of Service', icon: 'bi-calendar-check-fill' },
+    { value: 15, suffix: '', label: 'Years of Service', icon: 'bi-calendar-check-fill' },
   ];
 
   protected readonly stories = [

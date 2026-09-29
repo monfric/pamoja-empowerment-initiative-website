@@ -1,0 +1,16 @@
+.quote-icon {
+  display: block;
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--brand-secondary);
+}
+
+blockquote {
+  font-style: italic;
+  color: var(--brand-muted);
+}
+
+figcaption img {
+  border-radius: 50%;
+  object-fit: cover;
+}

@@ -1,0 +1,27 @@
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-primary);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.divider {
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin-block: 1rem;
+  border-radius: 4px;
+  background-color: var(--brand-secondary);
+}
+
+.subtitle {
+  max-width: 640px;
+  color: var(--brand-muted);
+}

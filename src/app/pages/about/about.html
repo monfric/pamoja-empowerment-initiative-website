@@ -1,0 +1,74 @@
+<app-page-header
+  title="About Us"
+  subtitle="[A short line about who you are.]"
+  image="images/page-about.svg"
+/>
+
+<!-- Our Story -->
+<section class="section">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" appReveal="fade-right">
+        <img src="images/about-story.svg" alt="Our story" class="img-fluid rounded-brand shadow" />
+      </div>
+      <div class="col-lg-6" appReveal="fade-left">
+        <app-section-title eyebrow="Our Story" title="How Pamoja Began" align="start" />
+        <p>
+          [Tell the story of how the organisation started – who founded it, when, and why.]
+        </p>
+        <p>
+          [Describe where you work today, who you serve and what makes your approach unique.]
+        </p>
+        <ul class="list-unstyled story-list">
+          <li><i class="bi bi-check-circle-fill"></i> [Key fact or milestone]</li>
+          <li><i class="bi bi-check-circle-fill"></i> [Key fact or milestone]</li>
+          <li><i class="bi bi-check-circle-fill"></i> [Key fact or milestone]</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Core Values -->
+<section class="section section-light">
+  <div class="container">
+    <app-section-title eyebrow="What Guides Us" title="Our Core Values" />
+    <div class="row g-4">
+      @for (value of values; track value.title; let i = $index) {
+        <div class="col-sm-6 col-lg-3" appReveal [revealDelay]="i * 120">
+          <div class="bg-white text-center p-4 h-100 rounded-brand shadow-sm hover-lift">
+            <span class="icon-circle mb-3"><i class="bi" [class]="value.icon"></i></span>
+            <h3 class="h5 fw-bold">{{ value.title }}</h3>
+            <p class="text-secondary mb-0">{{ value.text }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="section">
+  <div class="container">
+    <app-section-title
+      eyebrow="Our People"
+      title="Meet the Team"
+      subtitle="[Short intro to the people behind Pamoja.]"
+    />
+    <div class="row g-4">
+      @for (member of team; track $index; let i = $index) {
+        <div class="col-sm-6 col-lg-3" appReveal="zoom-in" [revealDelay]="i * 120">
+          <div class="team-card text-center">
+            <div class="team-img rounded-brand mb-3">
+              <img [src]="member.image" [alt]="member.name" class="img-fluid" loading="lazy" />
+            </div>
+            <h3 class="h5 fw-bold mb-1">{{ member.name }}</h3>
+            <p class="text-brand mb-0">{{ member.role }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<app-cta-banner />

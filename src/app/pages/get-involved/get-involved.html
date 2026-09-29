@@ -1,0 +1,68 @@
+<app-page-header
+  title="Get Involved"
+  subtitle="[A short line inviting people to join the cause.]"
+  image="images/page-get-involved.svg"
+/>
+
+<!-- Ways to help -->
+<section class="section">
+  <div class="container">
+    <app-section-title
+      eyebrow="Join Us"
+      title="Ways You Can Help"
+      subtitle="[Every contribution matters – introduce the options below.]"
+    />
+    <div class="row g-4">
+      @for (way of ways; track way.title; let i = $index) {
+        <div class="col-md-6 col-lg-4" appReveal [revealDelay]="i * 150">
+          <app-feature-card [card]="way" />
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- FAQ (Bootstrap accordion) -->
+<section class="section section-light">
+  <div class="container">
+    <app-section-title eyebrow="FAQ" title="Frequently Asked Questions" />
+    <div class="row justify-content-center">
+      <div class="col-lg-8" appReveal>
+        <div class="accordion" id="faqAccordion">
+          @for (faq of faqs; track $index; let i = $index) {
+            <div class="accordion-item border-0 mb-3 rounded-brand overflow-hidden shadow-sm">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button fw-semibold"
+                  [class.collapsed]="i !== 0"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  [attr.data-bs-target]="'#faq' + i"
+                  [attr.aria-expanded]="i === 0"
+                  [attr.aria-controls]="'faq' + i"
+                >
+                  {{ faq.q }}
+                </button>
+              </h3>
+              <div
+                [id]="'faq' + i"
+                class="accordion-collapse collapse"
+                [class.show]="i === 0"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body text-secondary">{{ faq.a }}</div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-cta-banner
+  title="Have another question?"
+  text="Our team is happy to help you find the best way to get involved."
+  buttonLabel="Contact Us"
+  buttonLink="/contact"
+/>

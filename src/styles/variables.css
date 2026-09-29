@@ -1,0 +1,46 @@
+/*
+ * Design tokens – change the brand here and the whole site follows.
+ * Bootstrap's own variables (--bs-*) are overridden so its buttons,
+ * links and utilities match the brand automatically.
+ */
+:root {
+  /* Brand colours */
+  --brand-primary: #0284c7; /* sky blue */
+  --brand-primary-rgb: 2, 132, 199;
+  --brand-primary-dark: #0369a1;
+  --brand-primary-dark-rgb: 3, 105, 161;
+  --brand-secondary: #f4a31b; /* warm amber */
+  --brand-secondary-dark: #d98c0a;
+  --brand-dark: #0b2239; /* deep navy */
+  --brand-dark-rgb: 11, 34, 57;
+  --brand-light: #f0f8fe;
+  --brand-muted: #5f6b73;
+
+  /* Typography */
+  --font-heading: 'Poppins', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  /* Layout */
+  --navbar-height: 76px;
+  --section-padding: 6rem;
+  --radius-lg: 1rem;
+  --shadow-sm: 0 4px 14px rgba(var(--brand-dark-rgb), 0.06);
+  --shadow-md: 0 12px 30px rgba(var(--brand-dark-rgb), 0.12);
+  --transition: all 0.3s ease;
+
+  /* Bootstrap overrides */
+  --bs-primary: var(--brand-primary);
+  --bs-primary-rgb: var(--brand-primary-rgb);
+  --bs-body-font-family: var(--font-body);
+  --bs-body-color: #2b3a44;
+  --bs-link-color: var(--brand-primary);
+  --bs-link-color-rgb: var(--brand-primary-rgb);
+  --bs-link-hover-color: var(--brand-primary-dark);
+  --bs-link-hover-color-rgb: var(--brand-primary-dark-rgb);
+}
+
+@media (max-width: 767.98px) {
+  :root {
+    --section-padding: 4rem;
+  }
+}

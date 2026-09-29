@@ -1,0 +1,54 @@
+<app-page-header
+  title="Our Impact"
+  subtitle="[A short line about the difference you make.]"
+  image="images/page-impact.svg"
+/>
+
+<!-- Numbers -->
+<section class="section">
+  <div class="container">
+    <app-section-title
+      eyebrow="By The Numbers"
+      title="The Change We've Made"
+      subtitle="[Explain how you measure your impact.]"
+    />
+    <div class="row g-4">
+      @for (stat of stats; track stat.label; let i = $index) {
+        <div class="col-6 col-lg-3" appReveal [revealDelay]="i * 120">
+          <app-stat-counter
+            [value]="stat.value"
+            [suffix]="stat.suffix"
+            [label]="stat.label"
+            [icon]="stat.icon"
+          />
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Success stories -->
+<section class="section section-light">
+  <div class="container">
+    <app-section-title eyebrow="Success Stories" title="Voices From the Community" />
+    <div class="row g-4">
+      @for (story of stories; track $index; let i = $index) {
+        <div class="col-md-6 col-lg-4" appReveal="fade-up" [revealDelay]="i * 150">
+          <figure class="story bg-white rounded-brand shadow-sm p-4 h-100 mb-0 hover-lift">
+            <i class="bi bi-quote quote-icon"></i>
+            <blockquote class="mb-4">{{ story.quote }}</blockquote>
+            <figcaption class="d-flex align-items-center gap-3">
+              <img [src]="story.image" [alt]="story.name" width="56" height="56" />
+              <div>
+                <strong class="d-block">{{ story.name }}</strong>
+                <small class="text-secondary">{{ story.location }}</small>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<app-cta-banner title="Help us grow our impact" buttonLabel="Donate Now" />

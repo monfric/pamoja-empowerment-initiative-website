@@ -1,0 +1,7 @@
+<div class="stat text-center">
+  @if (icon()) {
+    <span class="icon-circle mb-3"><i class="bi" [class]="icon()"></i></span>
+  }
+  <div class="stat-value">{{ current() | number }}{{ suffix() }}</div>
+  <div class="stat-label">{{ label() }}</div>
+</div>

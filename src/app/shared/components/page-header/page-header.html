@@ -1,0 +1,14 @@
+<header class="page-header" [style.background-image]="'url(' + image() + ')'">
+  <div class="container position-relative text-center text-white">
+    <h1 class="display-4 fw-bold text-white" appReveal>{{ title() }}</h1>
+    @if (subtitle()) {
+      <p class="lead mx-auto" appReveal [revealDelay]="150">{{ subtitle() }}</p>
+    }
+    <nav aria-label="breadcrumb" appReveal [revealDelay]="300">
+      <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ title() }}</li>
+      </ol>
+    </nav>
+  </div>
+</header>

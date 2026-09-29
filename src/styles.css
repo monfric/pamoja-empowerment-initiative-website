@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+/*
+ * Global styles entry point.
+ * Each concern lives in its own partial inside src/styles/.
+ */
+@import './styles/variables.css';
+@import './styles/base.css';
+@import './styles/utilities.css';
+@import './styles/animations.css';

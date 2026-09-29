@@ -1,0 +1,48 @@
+/* Small reusable helpers used across pages */
+.section {
+  padding-block: var(--section-padding);
+}
+
+.section-light {
+  background-color: var(--brand-light);
+}
+
+.text-brand {
+  color: var(--brand-primary) !important;
+}
+
+.text-accent {
+  color: var(--brand-secondary) !important;
+}
+
+.bg-brand {
+  background-color: var(--brand-primary) !important;
+}
+
+/* Round icon badge – used in cards, contact info, values, etc. */
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  color: var(--brand-primary);
+  background-color: rgba(var(--brand-primary-rgb), 0.1);
+  flex-shrink: 0;
+}
+
+/* Card lift effect */
+.hover-lift {
+  transition: var(--transition);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md) !important;
+}
+
+.rounded-brand {
+  border-radius: var(--radius-lg) !important;
+}

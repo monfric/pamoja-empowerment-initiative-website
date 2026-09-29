@@ -1,0 +1,15 @@
+<article class="card h-100 border-0 shadow-sm rounded-brand overflow-hidden hover-lift">
+  <div class="card-img-wrap">
+    <img [src]="card().image" class="card-img-top" [alt]="card().title" loading="lazy" />
+  </div>
+  <div class="card-body position-relative d-flex flex-column p-4">
+    @if (card().icon) {
+      <span class="card-icon"><i class="bi" [class]="card().icon"></i></span>
+    }
+    <h3 class="h5 card-title fw-bold">{{ card().title }}</h3>
+    <p class="card-text flex-grow-1">{{ card().text }}</p>
+    <a [routerLink]="card().link" class="btn btn-outline-primary align-self-start">
+      {{ card().linkLabel || 'Read More' }} <i class="bi bi-arrow-right ms-1"></i>
+    </a>
+  </div>
+</article>

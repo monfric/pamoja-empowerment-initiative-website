@@ -1,0 +1,46 @@
+<nav
+  class="navbar navbar-expand-lg fixed-top"
+  [class.navbar-solid]="scrolled() || menuOpen()"
+  aria-label="Main navigation"
+>
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" routerLink="/" (click)="closeMenu()">
+      <img [src]="site.logo" [alt]="site.name + ' logo'" width="44" height="44" />
+      <span class="brand-text">{{ site.shortName }}<small>Empowerment Initiative</small></span>
+    </a>
+
+    <button
+      class="navbar-toggler border-0"
+      type="button"
+      aria-controls="mainNav"
+      [attr.aria-expanded]="menuOpen()"
+      aria-label="Toggle navigation"
+      (click)="toggleMenu()"
+    >
+      <i class="bi" [class.bi-list]="!menuOpen()" [class.bi-x-lg]="menuOpen()"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav" [class.show]="menuOpen()">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        @for (link of links; track link.path) {
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              [routerLink]="link.path"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+              (click)="closeMenu()"
+            >
+              {{ link.label }}
+            </a>
+          </li>
+        }
+        <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+          <a class="btn btn-secondary btn-sm px-4" routerLink="/get-involved" (click)="closeMenu()">
+            Donate
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

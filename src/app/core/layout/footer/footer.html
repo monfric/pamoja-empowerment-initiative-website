@@ -1,0 +1,69 @@
+<footer class="footer">
+  <div class="container">
+    <!-- Three columns -->
+    <div class="row g-5">
+      <!-- 1. About Pamoja -->
+      <div class="col-lg-5 col-md-6" appReveal>
+        <h5 class="footer-title">About {{ site.shortName }}</h5>
+        <p class="mb-0">{{ site.about }}</p>
+      </div>
+
+      <!-- 2. Quick Links -->
+      <div class="col-lg-3 col-md-6" appReveal [revealDelay]="150">
+        <h5 class="footer-title">Quick Links</h5>
+        <ul class="list-unstyled footer-links">
+          @for (link of links; track link.path) {
+            <li>
+              <a [routerLink]="link.path"><i class="bi bi-chevron-right"></i> {{ link.label }}</a>
+            </li>
+          }
+        </ul>
+      </div>
+
+      <!-- 3. Contact Info -->
+      <div class="col-lg-4 col-md-12" appReveal [revealDelay]="300">
+        <h5 class="footer-title">Contact Info</h5>
+        <ul class="list-unstyled footer-contact">
+          <li><i class="bi bi-geo-alt-fill"></i> {{ contact.address }}</li>
+          <li>
+            <i class="bi bi-telephone-fill"></i>
+            <a [href]="'tel:' + contact.phone">{{ contact.phone }}</a>
+          </li>
+          <li>
+            <i class="bi bi-envelope-fill"></i>
+            <a [href]="'mailto:' + contact.email">{{ contact.email }}</a>
+          </li>
+          <li><i class="bi bi-clock-fill"></i> {{ contact.hours }}</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Social media icons -->
+    <div class="footer-social d-flex justify-content-center gap-3" appReveal="zoom-in">
+      @for (social of socials; track social.name) {
+        <a
+          [href]="social.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          [attr.aria-label]="social.name"
+          [title]="social.name"
+        >
+          <i class="bi" [class]="social.icon"></i>
+        </a>
+      }
+    </div>
+
+    <hr />
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2">
+      <p class="mb-0">
+        Developed by
+        <a [href]="site.developer.url" target="_blank" rel="noopener noreferrer">{{
+          site.developer.name
+        }}</a>
+      </p>
+      <p class="mb-0">&copy; {{ year }} {{ site.shortName }} Initiative | All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>

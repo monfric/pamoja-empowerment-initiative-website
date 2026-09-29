@@ -1,0 +1,29 @@
+<app-page-header
+  title="Our Programs"
+  subtitle="[A short line about your programs.]"
+  image="images/page-programs.svg"
+/>
+
+<section class="section">
+  <div class="container">
+    <app-section-title
+      eyebrow="What We Do"
+      title="Programs That Transform Lives"
+      subtitle="[Introduce your program areas in one or two sentences.]"
+    />
+    <div class="row g-4">
+      @for (program of programs; track program.title; let i = $index) {
+        <div class="col-md-6 col-lg-4" appReveal [revealDelay]="(i % 3) * 150">
+          <app-feature-card [card]="program" />
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<app-cta-banner
+  title="Want to support a program?"
+  text="[Invite visitors to fund or partner on a specific program.]"
+  buttonLabel="Partner With Us"
+  buttonLink="/contact"
+/>

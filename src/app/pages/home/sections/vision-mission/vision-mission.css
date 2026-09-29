@@ -1,0 +1,23 @@
+.vm-card {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--brand-light);
+  border-bottom: 4px solid var(--brand-primary);
+}
+
+.vm-card p {
+  color: var(--brand-muted);
+  font-size: 1.05rem;
+}
+
+/* Large faded icon in the corner */
+.vm-card::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-color: rgba(244, 163, 27, 0.12);
+}

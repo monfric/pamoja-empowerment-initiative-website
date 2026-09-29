@@ -1,0 +1,10 @@
+<div class="section-title mb-5" [class.text-center]="align() === 'center'" appReveal>
+  @if (eyebrow()) {
+    <span class="eyebrow">{{ eyebrow() }}</span>
+  }
+  <h2 class="fw-bold">{{ title() }}</h2>
+  <span class="divider" [class.mx-auto]="align() === 'center'"></span>
+  @if (subtitle()) {
+    <p class="subtitle" [class.mx-auto]="align() === 'center'">{{ subtitle() }}</p>
+  }
+</div>

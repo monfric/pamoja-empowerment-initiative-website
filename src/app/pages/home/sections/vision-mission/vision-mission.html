@@ -1,0 +1,17 @@
+<section class="section" id="vision-mission">
+  <div class="container">
+    <app-section-title eyebrow="Who We Are" title="Our Vision & Mission" />
+
+    <div class="row g-4">
+      @for (item of items; track item.title) {
+        <div class="col-md-6" [appReveal]="item.animation">
+          <div class="vm-card h-100 rounded-brand p-4 p-lg-5 hover-lift">
+            <span class="icon-circle mb-4"><i class="bi" [class]="item.icon"></i></span>
+            <h3 class="h4 fw-bold">{{ item.title }}</h3>
+            <p class="mb-0">{{ item.text }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

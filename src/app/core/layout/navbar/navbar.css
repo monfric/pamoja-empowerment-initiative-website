@@ -1,0 +1,97 @@
+/* Transparent over the dark hero/page header, solid white once scrolled */
+.navbar {
+  min-height: var(--navbar-height);
+  padding-block: 0.9rem;
+  background-color: transparent;
+  transition: var(--transition);
+}
+
+.navbar-solid {
+  background-color: #fff;
+  padding-block: 0.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: #fff;
+}
+
+.brand-text small {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.nav-link {
+  position: relative;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  padding-inline: 0.75rem !important;
+}
+
+/* Animated underline */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.2rem;
+  height: 2px;
+  background-color: var(--brand-secondary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #fff;
+}
+
+.navbar-toggler {
+  font-size: 1.8rem;
+  color: #fff;
+  box-shadow: none !important;
+}
+
+/* Solid state colours */
+.navbar-solid .brand-text,
+.navbar-solid .navbar-toggler {
+  color: var(--brand-dark);
+}
+
+.navbar-solid .brand-text small {
+  color: var(--brand-primary);
+}
+
+.navbar-solid .nav-link {
+  color: var(--brand-dark);
+}
+
+.navbar-solid .nav-link:hover,
+.navbar-solid .nav-link.active {
+  color: var(--brand-primary);
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    padding-block: 1rem;
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+}

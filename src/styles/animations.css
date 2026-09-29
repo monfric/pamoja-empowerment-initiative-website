@@ -1,0 +1,52 @@
+/*
+ * Scroll-reveal animations.
+ * The [appReveal] directive adds `.reveal` + `.reveal-<type>` to an element
+ * and toggles `.is-visible` when it scrolls into view.
+ *
+ * Available types: fade-up, fade-down, fade-left, fade-right, zoom-in, fade
+ */
+.reveal {
+  opacity: 0;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade-up {
+  transform: translateY(50px);
+}
+
+.reveal-fade-down {
+  transform: translateY(-50px);
+}
+
+.reveal-fade-left {
+  transform: translateX(60px);
+}
+
+.reveal-fade-right {
+  transform: translateX(-60px);
+}
+
+.reveal-zoom-in {
+  transform: scale(0.85);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

@@ -1,0 +1,17 @@
+<section class="section section-light">
+  <div class="container">
+    <app-section-title
+      eyebrow="Our Work"
+      title="Discover Our Work"
+      subtitle="[One sentence introducing the areas below.]"
+    />
+
+    <div class="row g-4">
+      @for (card of cards; track card.title; let i = $index) {
+        <div class="col-md-6 col-lg-4" appReveal [revealDelay]="i * 150">
+          <app-feature-card [card]="card" />
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,103 @@
+<app-page-header
+  title="Contact Us"
+  subtitle="[A short line inviting people to reach out.]"
+  image="images/page-contact.svg"
+/>
+
+<section class="section">
+  <div class="container">
+    <div class="row g-5">
+      <!-- Contact details -->
+      <div class="col-lg-5" appReveal="fade-right">
+        <app-section-title eyebrow="Get In Touch" title="We'd Love to Hear From You" align="start" />
+        <ul class="list-unstyled contact-list">
+          <li>
+            <span class="icon-circle"><i class="bi bi-geo-alt-fill"></i></span>
+            <div><strong>Address</strong><span>{{ contact.address }}</span></div>
+          </li>
+          <li>
+            <span class="icon-circle"><i class="bi bi-telephone-fill"></i></span>
+            <div>
+              <strong>Phone</strong><a [href]="'tel:' + contact.phone">{{ contact.phone }}</a>
+            </div>
+          </li>
+          <li>
+            <span class="icon-circle"><i class="bi bi-envelope-fill"></i></span>
+            <div>
+              <strong>Email</strong><a [href]="'mailto:' + contact.email">{{ contact.email }}</a>
+            </div>
+          </li>
+          <li>
+            <span class="icon-circle"><i class="bi bi-clock-fill"></i></span>
+            <div><strong>Office Hours</strong><span>{{ contact.hours }}</span></div>
+          </li>
+        </ul>
+        <div class="d-flex gap-2 mt-4">
+          @for (social of socials; track social.name) {
+            <a
+              class="social-btn"
+              [href]="social.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              [attr.aria-label]="social.name"
+            >
+              <i class="bi" [class]="social.icon"></i>
+            </a>
+          }
+        </div>
+      </div>
+
+      <!-- Contact form -->
+      <div class="col-lg-7" appReveal="fade-left">
+        <div class="form-card rounded-brand shadow p-4 p-md-5">
+          @if (submitted()) {
+            <div class="alert alert-success d-flex align-items-center gap-2" role="alert">
+              <i class="bi bi-check-circle-fill"></i> Thank you! Your message has been sent.
+            </div>
+          }
+          <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="name" class="form-label">Full Name</label>
+                <input id="name" class="form-control" formControlName="name"
+                  [class.is-invalid]="isInvalid('name')" />
+                <div class="invalid-feedback">Please enter your name.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label">Email Address</label>
+                <input id="email" type="email" class="form-control" formControlName="email"
+                  [class.is-invalid]="isInvalid('email')" />
+                <div class="invalid-feedback">Please enter a valid email.</div>
+              </div>
+              <div class="col-12">
+                <label for="subject" class="form-label">Subject</label>
+                <input id="subject" class="form-control" formControlName="subject"
+                  [class.is-invalid]="isInvalid('subject')" />
+                <div class="invalid-feedback">Please enter a subject.</div>
+              </div>
+              <div class="col-12">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" rows="5" class="form-control" formControlName="message"
+                  [class.is-invalid]="isInvalid('message')"></textarea>
+                <div class="invalid-feedback">Message must be at least 10 characters.</div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary btn-lg">
+                  Send Message <i class="bi bi-send-fill ms-1"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Map: replace the placeholder with a Google Maps <iframe> embed -->
+<section class="map-placeholder" appReveal="fade">
+  <div class="text-center">
+    <i class="bi bi-map display-4 d-block mb-2"></i>
+    [Paste your Google Maps embed iframe here]
+  </div>
+</section>

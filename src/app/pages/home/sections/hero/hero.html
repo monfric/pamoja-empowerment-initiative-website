@@ -1,0 +1,24 @@
+<section class="hero" [style.background-image]="'url(' + image() + ')'">
+  <div class="container position-relative">
+    <div class="row">
+      <div class="col-lg-8 col-xl-7 text-white">
+        <span class="hero-badge" appReveal="fade-down">Welcome to Pamoja</span>
+        <h1 class="hero-title text-white" appReveal [revealDelay]="150">
+          Empowering Communities, <span class="text-accent">Together.</span>
+        </h1>
+        <p class="hero-text" appReveal [revealDelay]="300">
+          [Short, inspiring statement about your NGO. Explain who you serve and the change you
+          create in one or two sentences.]
+        </p>
+        <div class="d-flex flex-wrap gap-3" appReveal [revealDelay]="450">
+          <a routerLink="/get-involved" class="btn btn-secondary btn-lg">Get Involved</a>
+          <a routerLink="/about" class="btn btn-outline-light btn-lg">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a routerLink="/" fragment="vision-mission" class="scroll-down" aria-label="Scroll down">
+    <i class="bi bi-chevron-double-down"></i>
+  </a>
+</section>

@@ -1,0 +1,70 @@
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding-block: calc(var(--navbar-height) + 3rem) 5rem;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* subtle parallax on desktop */
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(var(--brand-dark-rgb), 0.7);
+}
+
+.hero-badge {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.hero-text {
+  font-size: 1.15rem;
+  max-width: 560px;
+  margin-bottom: 2.2rem;
+  opacity: 0.9;
+}
+
+.scroll-down {
+  position: absolute;
+  left: 50%;
+  bottom: 2rem;
+  font-size: 1.6rem;
+  color: #fff;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 10px);
+  }
+}
+
+/* Fixed backgrounds are janky on mobile – disable there */
+@media (max-width: 991.98px) {
+  .hero {
+    background-attachment: scroll;
+  }
+}
